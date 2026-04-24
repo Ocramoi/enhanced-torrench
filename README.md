@@ -1,8 +1,8 @@
 # Enhanced Torrench
 
-![Screenshot](https://github.com/almezali/enhanced-torrench/blob/main/01-Screenshot.png)
-![Screenshot](https://github.com/almezali/enhanced-torrench/blob/main/02-Screenshot.png)
-![Screenshot](https://github.com/almezali/enhanced-torrench/blob/main/03-Screenshot.png)
+![Screenshot](https://github.com/almezali/enhanced-torrench/blob/main/res/01-Screenshot.png)
+![Screenshot](https://github.com/almezali/enhanced-torrench/blob/main/res/02-Screenshot.png)
+![Screenshot](https://github.com/almezali/enhanced-torrench/blob/main/res/03-Screenshot.png)
 
 A powerful multi-site torrent search tool that allows you to search across multiple popular torrent sites simultaneously from the command line. Enhanced Torrench automatically tests site availability and provides comprehensive search results with detailed information.
 
