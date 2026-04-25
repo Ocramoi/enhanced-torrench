@@ -7,6 +7,7 @@ Supports multiple popular torrent sites with English search
 import logging
 import sys
 import argparse
+import pyperclip
 import webbrowser
 from typing import List, Optional
 from tabulate import tabulate
@@ -89,6 +90,7 @@ def result_details(result: Torrent):
     print(f"Leeches: {result.leeches}")
     print(f"Date: {result.date}")
     print(f"Detail URL: {result.detail_url}")
+    print(f"Magnet Link: {result.magnet or '-'}")
     print(colored("-" * 40, "yellow"))
     
 def main():
@@ -130,7 +132,6 @@ def main():
     parser.add_argument(
         "-d", "--debug",
         action="store_true",
-        default=False,
         help="Enable debug mode with verbose output",
     )
     
@@ -190,7 +191,7 @@ def main():
     print(colored("Green = VIP | Magenta = Trusted", "yellow"))
     
     # Interactive detail viewing
-    print(colored("\nEnter torrent index to view details (0 to exit, 'o' to open last selected torrent's URL):", "cyan"))
+    print(colored("\nEnter torrent index to view details (0 to exit, 'o' to open last selected torrent's URL, 'c' to copy it's magnet):", "cyan"))
 
     current_index: Optional[int] = None
     while True:
@@ -204,6 +205,19 @@ def main():
                     webbrowser.open(results[current_index].detail_url)
                 else:
                     print(colored("No torrent selected to open!", "red"))
+                continue
+            elif choice.lower() == 'c':
+                if current_index is not None:
+                    magnet_link = results[current_index].magnet
+                    if magnet_link:
+                        pyperclip.copy(magnet_link)
+                        print(colored("Magnet link copied to clipboard!", "green"))
+                    else:
+                        print(colored("Failed to retrieve magnet link!", "red"))
+                else:
+                    print(colored("No torrent selected to copy!", "red"))
+                continue
+                
             
             try:
                 index = int(choice) - 1

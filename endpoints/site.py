@@ -3,6 +3,8 @@ from dataclasses import dataclass
 from typing import Any, List, Optional
 import requests
 import logging
+import requests
+import re
 
 from termcolor import colored
 
@@ -17,6 +19,7 @@ class Torrent:
     size: str
     detail_url: str
     site: str
+    _magnet: Optional[str] = None
     is_vip: bool = False
     is_trusted: bool = False
 
@@ -41,6 +44,23 @@ class Torrent:
             self.leeches,
             self.date,
         ]
+
+    @property
+    def magnet(self) -> Optional[str]:
+        """Return magnet link for this torrent"""
+
+        if self._magnet is None:
+            headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+            response = requests.get(self.detail_url, headers=headers, timeout=5)
+            if response.status_code == 200:
+                # Try to find magnet link in the page content
+                _match = re.search(r'href="(magnet:\?[^"]+)"', response.text)
+                if _match:
+                    self._magnet = _match.group(1)
+                    return self._magnet
+            else:
+                logging.debug(f"Failed to fetch detail page for magnet link: {self.detail_url} - Status code: {response.status_code}")
+        return self._magnet
 
 class TorrentSite(ABC):
     name: str = "Baseline"
