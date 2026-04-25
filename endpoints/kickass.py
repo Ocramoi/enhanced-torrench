@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import re
 from typing import List
 from .site import Torrent, TorrentSite
 from bs4 import BeautifulSoup
@@ -26,6 +27,8 @@ class Kickass(TorrentSite):
     def parse_results(self, content):
         soup = BeautifulSoup(content, "lxml")
         results: List[Torrent] = []
+
+        entry_cleaner = r"[\n\r\t\b]|(\\.)"
         
         try:
             table = soup.find('table', class_="data")
@@ -44,12 +47,12 @@ class Kickass(TorrentSite):
                     if not name_cell:
                         continue
                     
-                    name = name_cell.get_text().strip()
+                    name = re.sub(entry_cleaner, '', name_cell.get_text()).strip()
                     detail_url = urljoin(self.working_url or "", str(name_cell['href']))
                     
-                    size = cells[1].get_text().strip()
-                    seeds = cells[4].get_text().strip()
-                    leeches = cells[5].get_text().strip() if len(cells) > 5 else "0"
+                    size = re.sub(entry_cleaner, '', cells[1].get_text()).strip()
+                    seeds = re.sub(entry_cleaner, '', cells[4].get_text()).strip()
+                    leeches = re.sub(entry_cleaner, '', cells[5].get_text()).strip() if len(cells) > 5 else "0"
                     
                     results.append(Torrent(
                         name=name,
