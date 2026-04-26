@@ -1,0 +1,25 @@
+[project]
+name = "enhanced-torrench"
+version = "1.0.0"
+authors = [
+    { name = "Marco 'Ocramoi' Toledo", email = "ocramoi@duck.com" },
+    { name = "mahmoud al-mazali", email = "mzmcs@hotmail.com" },
+]
+description = "Search and explore torrents from multiple endpoints."
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Operating System :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICENSE"]
+
+[project.urls]
+Homepage = "https://github.com/almezali/enhanced-torrench"
+Issues = "https://github.com/almezali/enhanced-torrench/issues"
+
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"

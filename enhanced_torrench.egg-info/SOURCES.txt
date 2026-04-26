@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+torrench.py
+enhanced_torrench.egg-info/PKG-INFO
+enhanced_torrench.egg-info/SOURCES.txt
+enhanced_torrench.egg-info/dependency_links.txt
+enhanced_torrench.egg-info/top_level.txt
