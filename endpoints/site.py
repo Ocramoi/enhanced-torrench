@@ -98,7 +98,7 @@ class TorrentSite(ABC):
             search_url = self.build_search_url(query, page)
             response = requests.get(search_url, timeout=15)
             if response.status_code == 200:
-                return self.parse_results(str(response.content))
+                return self.parse_results(response.text)
         except Exception as e:
             print(colored(f"Error searching {self.name}: {e}", "red"))
         
