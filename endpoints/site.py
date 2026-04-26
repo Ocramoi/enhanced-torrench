@@ -3,7 +3,6 @@ from dataclasses import dataclass
 from typing import Any, List, Optional
 import requests
 import logging
-import requests
 import re
 
 from termcolor import colored
