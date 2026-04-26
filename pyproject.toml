@@ -1,6 +1,6 @@
 [project]
 name = "enhanced-torrench"
-version = "1.0.0"
+version = "2.1.0"
 authors = [
     { name = "Marco 'Ocramoi' Toledo", email = "ocramoi@duck.com" },
     { name = "mahmoud al-mazali", email = "mzmcs@hotmail.com" },

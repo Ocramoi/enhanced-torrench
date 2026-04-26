@@ -127,7 +127,7 @@ def main():
     parser.add_argument(
         "-v", "--version",
         action="version",
-        version="Enhanced Torrench v2.0"
+        version="Enhanced Torrench v2.1"
     )
     parser.add_argument(
         "-d", "--debug",

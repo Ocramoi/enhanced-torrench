@@ -1,14 +1,13 @@
 from setuptools import setup
 
 setup(
-    name="torrench",
-    version="1.0.0",
+    name="enchanced-torrench",
+    version="2.1.0",
     description="A powerful multi-site torrent search tool for the command line",
     author="Mahmoud Almezali",
     author_email="mzmcsmzm@gmail.com",
     url="https://github.com/almezali/enhanced-torrench",
     py_modules=[
-        'torrench',
         'endpoints',
     ],
     install_requires=[
@@ -34,9 +33,6 @@ setup(
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License"
-    ],
-    requires=[
-        "wheel",
     ],
     python_requires=">=3.6"
 )
