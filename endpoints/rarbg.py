@@ -1,7 +1,7 @@
 import logging
 from typing import List
 from termcolor import colored
-from endpoints.site import Torrent, TorrentSite
+from .site import Torrent, TorrentSite
 from urllib.parse import quote, urljoin
 from bs4 import BeautifulSoup
 
