@@ -22,7 +22,7 @@ class Torrent:
     is_vip: bool = False
     is_trusted: bool = False
 
-    def formated(self, i: int = -1) -> List[Any]:
+    def formatted(self, i: int = -1) -> List[Any]:
         """Return formatted torrent data for appending to table"""
         name = self.name
             
