@@ -74,7 +74,7 @@ class TorrentSearcher:
         formatted_results = []
         
         for i, result in enumerate(results, 1):
-            formatted_results.append(result.formated(i))
+            formatted_results.append(result.formatted(i))
 
         return formatted_results
 
@@ -90,7 +90,7 @@ def result_details(result: Torrent):
     print(f"Leeches: {result.leeches}")
     print(f"Date: {result.date}")
     print(f"Detail URL: {result.detail_url}")
-    print(f"Magnet Link: {result.magnet or '-'}")
+    print(f"Magnet Link: {result.magnet or '(Not found)'}")
     print(colored("-" * 40, "yellow"))
     
 def main():
@@ -191,7 +191,7 @@ def main():
     print(colored("Green = VIP | Magenta = Trusted", "yellow"))
     
     # Interactive detail viewing
-    print(colored("\nEnter torrent index to view details (0 to exit, 'o' to open last selected torrent's URL, 'c' to copy it's magnet):", "cyan"))
+    print(colored("\nEnter torrent index to view details (0 to exit, 'o' to open last selected torrent's URL, 'c' to copy its magnet):", "cyan"))
 
     current_index: Optional[int] = None
     while True:
