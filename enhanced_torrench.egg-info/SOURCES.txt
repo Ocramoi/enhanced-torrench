@@ -3,6 +3,13 @@ README.md
 pyproject.toml
 setup.py
 torrench.py
+endpoints/__init__.py
+endpoints/kickass.py
+endpoints/lime.py
+endpoints/pirate_bay.py
+endpoints/rarbg.py
+endpoints/site.py
+endpoints/torrentz2.py
 enhanced_torrench.egg-info/PKG-INFO
 enhanced_torrench.egg-info/SOURCES.txt
 enhanced_torrench.egg-info/dependency_links.txt
