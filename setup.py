@@ -7,7 +7,10 @@ setup(
     author="Mahmoud Almezali",
     author_email="mzmcsmzm@gmail.com",
     url="https://github.com/almezali/enhanced-torrench",
-    py_modules=['torrench'],  
+    py_modules=[
+        'torrench',
+        'endpoints',
+    ],
     install_requires=[
         "beautifulsoup4>=4.14.3",
         "certifi>=2026.4.22",
