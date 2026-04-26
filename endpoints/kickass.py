@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import logging
 import re
 from typing import List
 from .site import Torrent, TorrentSite
@@ -69,6 +70,7 @@ class Kickass(TorrentSite):
                     ))
                     
                 except Exception as e:
+                    logging.debug(f"Error parsing row in {self.name} results: {e}")
                     continue
         
         except Exception as e:
