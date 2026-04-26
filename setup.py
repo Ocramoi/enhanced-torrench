@@ -1,15 +1,16 @@
 from setuptools import setup
 
 setup(
-    name="enchanced-torrench",
+    name="enhanced-torrench",
     version="2.1.0",
     description="A powerful multi-site torrent search tool for the command line",
     author="Mahmoud Almezali",
     author_email="mzmcsmzm@gmail.com",
     url="https://github.com/almezali/enhanced-torrench",
-    py_modules=[
+    packages=[
         'endpoints',
     ],
+    py_modules=["torrench"],
     install_requires=[
         "beautifulsoup4>=4.14.3",
         "certifi>=2026.4.22",
