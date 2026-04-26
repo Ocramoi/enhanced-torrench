@@ -1,0 +1,21 @@
+# Testing configuration for Enhanced Torrench
+
+[coverage:run]
+branch = True
+source = endpoints, torrench
+omit =
+    */tests/*
+    */test_*.py
+    setup.py
+
+[coverage:report]
+exclude_lines =
+    pragma: no cover
+    def __repr__
+    raise AssertionError
+    raise NotImplementedError
+    if __name__ == .__main__.:
+    if TYPE_CHECKING:
+    @abstractmethod
+precision = 2
+show_missing = True
